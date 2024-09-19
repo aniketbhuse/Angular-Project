@@ -1,0 +1,64 @@
+<p>reactive works!</p>
+
+<form class="row g-3 needs-validation" [formGroup]="studentForm"  novalidate>
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input type="text" name="firstName" formControlName="fristName" class="form-control">
+      <div class="text-danger">
+        @if(studentForm.controls['fristName'].errors?.['required']){
+          <span>This is Requried</span>
+        }@else if (studentForm.controls['firstName'].errors?.['minlength']) {
+        <span>Min char 4 Requried</span>
+        }
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" name="lastName" formControlName="lastName"  class="form-control" >
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername"  class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend"></span>
+        <input type="text" name="userName" formControlName="userName" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input type="text" class="form-control" formControlName="city" name="city" >
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label" style="margin-top: 30px;">State</label>
+      <select class="form-select" formControlName="state" name="state" >
+        <option selected disabled value="">Choose...</option>
+        <option>Maharastra</option>
+        <option>Goa</option>
+        <option>Punjab</option>
+        <option>Delhi</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Zip</label>
+      <input type="text" class="form-control" formControlName="zipCode" name="zipCode" >
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+       <div class="col-9 margin">
+        <input class="form-check-input" formControlName="isAcceptTerm" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+       </div>
+      </div>
+    </div>
+    <div class="col-12 marign-btn">
+      <button class="btn btn-secondary" type="button" >Rest Form</button>
+      <button class="btn btn-primary" type="submit" (click)="onSave()">Submit Form</button>
+    </div>
+   <div class="col-9">
+    {{formValue | json}}
+   </div>
+  </form>

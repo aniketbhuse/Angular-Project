@@ -1,0 +1,30 @@
+<p>pipe works!</p>
+<div class="Container">
+    <div class="row">
+        <div class="col-3">
+            orignal value - {{fristName}}
+        <br/>
+        after pipe - {{fristName| uppercase}}
+        </div>
+        <div class="col-3" style="margin-top: 20px;">
+            orignal value - {{fristName}}
+        <br/>
+        after pipe - {{fristName | lowercase}}
+        </div>
+        <div class="col-3" style="margin-top: 20px;">
+            orignal value - {{fristName}}
+        <br/>
+        after pipe - {{fristName | titlecase}}
+        </div>
+        <div class="col-3" style="margin-top: 20px;">
+            orignal value - {{student}}
+        <br/>
+        after pipe - {{student | json}}
+        </div>
+        <div class="col-3" style="margin-top: 20px;">
+            orignal value - {{student.state}}
+        <br/>
+        after pipe -{{student.state | na}}
+        </div>
+    </div>
+</div>

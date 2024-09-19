@@ -1,0 +1,38 @@
+<p class="text-primary">add-employee works!</p>
+<div class="row">
+    <div class="col-3">
+        <input type="text" [(ngModel)]="dayNumber"/>
+    </div>
+    <div class="alert alert-success">
+        <strong>Success!</strong> Indicates a successful or positive action.
+      </div>
+    <div class="col-3">
+        Day Name is : 
+        @switch (dayNumber) {
+            @case ('1') {
+                <span>Monday</span>
+            }
+            @case ('2') {
+                <span>Tuesday</span>
+            }
+            @case ('3') {
+                <span>Wensday</span>
+            }
+            @case ('4') {
+                <span>Thusday</span>
+            }
+            @case ('5') {
+                <span>friday</span>
+            }
+            @case ('6') {
+                <span>Saturday</span>
+            }
+            @case ('7') {
+                <span>Sunday</span>
+            }
+            @default {
+                <span>Wrong Entry</span>
+            }
+        }
+    </div>
+</div>

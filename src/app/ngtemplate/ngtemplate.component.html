@@ -1,0 +1,29 @@
+<p>ngtemplate works!</p>
+
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="bg-primary p-3" *ngIf="isUserLoggedIn; else notLogged">
+            {{loggerUserName}}
+        </div>
+        <ng-template #notLogged>
+            <div class="bg-danger p-3" >
+                <span>User Not logged in</span>
+            </div>
+        </ng-template>
+    </div>
+</div>
+<div class="col-4">
+    <ng-template #dayamicTemplate>
+        <p>Hi from jayu</p>
+    </ng-template>
+</div>
+<div class="col-4">
+    <div #dynamicContainser>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="loadTemplate()">Load Content</button>
+    </div>
+</div>

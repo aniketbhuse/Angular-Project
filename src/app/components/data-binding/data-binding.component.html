@@ -1,0 +1,48 @@
+
+<div class="row">
+    <div class="col-3">
+        one way - form .ts to .html
+    </div>
+    <div class="col-3">
+
+    </div>
+    <div class="col-3">
+
+    </div>
+</div>
+
+<div class="row" style="margin: 20px;">
+   
+       <div class="row">
+       
+            <h2>{{courseName}}</h2>
+            <h2>{{inputType}}</h2>
+            <input type="text" value="{{courseName}}" placeholder="Enter Text"/>
+            <input type="{{inputType}}"/>
+       </div>
+       
+    
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showAlert('Welcome to ANgular 18')">show welcome</button>
+        <span (click)="showAlert('this is from span')">Click me</span>
+        <button class="btn btn-success" (click)="changeCourseName()">Change Course</button>
+    </div>
+    <div class="col-3">
+        <select [(ngModel)]="stateName">
+            <option value="">select</option>
+            <option value="Maharastra">Maharashtra</option>
+            <option value="Goa">Goa</option>
+            <option value="Punjab">Punjab</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <ul>
+                <li *ngfor="let city of cityArray">{{city}}</li>
+            </ul>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+    </div>
+</div>
